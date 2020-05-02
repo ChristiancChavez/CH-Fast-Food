@@ -1,7 +1,11 @@
 import React from 'react';
+//Components
 import OptionsHeader from '../OptionsHeader/OptionsHeader';
+//Dependencies
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faUsers, faMobileAlt, faStroopwafel } from '@fortawesome/free-solid-svg-icons'
+import { faUsers, faMobileAlt, faStroopwafel } from '@fortawesome/free-solid-svg-icons';
+
+//Styles
 import  './Header.scss';
 const Header = () => {
     library.add(faUsers, faMobileAlt, faStroopwafel);

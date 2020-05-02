@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-const OptionsHeader = ({ icon,  route }) => (
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+const OptionsHeader = ({ name,  route }) => (
     <div>
-        <Link to={`/${route}/`}>
-            <i class={`fas ${icon}`}></i>
-        </Link>
+        {/* <Link to={`/${route}/`}> */}
+            <FontAwesomeIcon icon={name} />
+        {/* </Link> */}
     </div>
 )
 

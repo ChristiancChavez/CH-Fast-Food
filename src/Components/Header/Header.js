@@ -1,14 +1,19 @@
 import React from 'react';
 import OptionsHeader from '../OptionsHeader/OptionsHeader';
-const Header = () => (
-    <div>
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faUsers, faMobileAlt, faStroopwafel } from '@fortawesome/free-solid-svg-icons'
+const Header = () => {
+    library.add(faUsers, faMobileAlt, faStroopwafel);
+    return (
         <div>
-            <OptionsHeader route={'Home'} icon={'fa-stroopwafel'}/>
-            <OptionsHeader route={'AboutUs'} icon={'fa-users'}/>
-            <OptionsHeader route={'Contact'} icon={'fa-mobile-alt'} />
+            <div>
+                <OptionsHeader route={'Home'} name={faStroopwafel}/>
+                <OptionsHeader route={'AboutUs'} name={faUsers}/>
+                <OptionsHeader route={'Contact'} name={faMobileAlt} />
+            </div>
+            <h1>CH FAST FOOD</h1>
         </div>
-        <h1>CH FAST FOOD</h1>
-    </div>
-)
+    )
+}
 
 export default Header;

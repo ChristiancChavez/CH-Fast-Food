@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import './OptionsHeader.scss';
 const OptionsHeader = ({ name,  route }) => (
-    <div>
+    <div className="optionsHeader">
         {/* <Link to={`/${route}/`}> */}
-            <FontAwesomeIcon icon={name} />
+            <FontAwesomeIcon  icon={name} />
         {/* </Link> */}
     </div>
 )

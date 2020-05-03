@@ -1,5 +1,5 @@
 //variables
-$header-font:'Permanent Marker', cursive;
+$header-font:'Monoton', cursive;
 $color-header: #ffe600;
 $text-shadow-header: 5px 2px 2px #f34500;
 //mixins
@@ -11,9 +11,11 @@ $text-shadow-header: 5px 2px 2px #f34500;
 }
 
 .header {
-    background-color: #5a5a5a;
+    background-image: linear-gradient(to right, rgb(82, 80, 80) , rgb(133, 133, 129));
     color: $color-header;
     padding: 5px;
+    border-radius: 12px;
+    margin: 15px;
     @extend %distribution-header;
     &__menu {
         @extend %distribution-header;

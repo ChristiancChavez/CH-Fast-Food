@@ -12,9 +12,9 @@ const Header = () => {
     return (
         <div className="header">
             <div className="header__menu">
-                <OptionsHeader route={'Home'} name={faStroopwafel}/>
-                <OptionsHeader route={'AboutUs'} name={faUsers}/>
-                <OptionsHeader route={'Contact'} name={faMobileAlt} />
+                <OptionsHeader route={''} name={faStroopwafel}/>
+                <OptionsHeader route={'about'} name={faUsers}/>
+                <OptionsHeader route={'contact'} name={faMobileAlt} />
             </div>
             <h1 className="header__title">CH FAST FOOD</h1>
         </div>

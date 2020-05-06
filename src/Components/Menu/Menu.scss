@@ -7,10 +7,6 @@ $text-shadow-category: 5px 2px 2px white;
     justify-content: space-evenly;
 }
 .menu {
-    background-image: linear-gradient(to top, rgb(82, 80, 80) , rgb(133, 133, 129));
-    margin: 15px;
-    padding: 8px;
-    border-radius: 12px;
     @extend %position-category;
     flex-flow: column nowrap;
     height: 70vh;

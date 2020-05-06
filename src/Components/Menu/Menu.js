@@ -7,7 +7,7 @@ import './Menu.scss';
 const Menu = () => {
     return (
         <div className="menu">
-            <h4 className="menu__title">Taste our delicious flavors</h4>
+            <h4 className="menu__title">Taste our delicious flavors¡¡¡</h4>
             <div className="menu__categories">
                 <ImageCategoryMenu img={'chicken-category'} category={'Broasted Chicken'} />
                 <ImageCategoryMenu img={'hamburger-category'} category={'Hamburger'} />

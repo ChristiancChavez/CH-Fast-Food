@@ -1,12 +1,15 @@
 import React from 'react';
 //Dependencies
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 import './ImageCategoryMenu.scss';
-const ImageCategoryMenu = ({ img, category}) => {
+const ImageCategoryMenu = ({ img, category, page}) => {
     return (
         <div className="category">
             <img className="category__img" src={require(`../../Assets/Images/${img}.jpg`)} alt={category} />
-            <h2 className="category__title">{category}</h2>
+            <Link to="/chicken" className=" category__link">
+                <h2 className="category__title">{category}</h2>
+            </Link>
         </div>
     )
 }

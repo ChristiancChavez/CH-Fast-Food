@@ -9,9 +9,9 @@ const Menu = () => {
         <div className="menu">
             <h4 className="menu__title">Taste our delicious flavors¡¡¡</h4>
             <div className="menu__categories">
-                <ImageCategoryMenu img={'chicken-category'} category={'Broasted Chicken'} />
-                <ImageCategoryMenu img={'hamburger-category'} category={'Hamburger'} />
-                <ImageCategoryMenu img={'pizza-category'} category={'Pizza'} />
+                <ImageCategoryMenu img={'chicken-category'} category={'Chicken'} page={'chicken'} />
+                <ImageCategoryMenu img={'hamburger-category'} category={'Hamburger'} page={'hamburger'} />
+                <ImageCategoryMenu img={'pizza-category'} category={'Pizza'} page={'pizza'} />
             </div>
         </div>
     )

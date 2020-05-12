@@ -4,16 +4,19 @@ import { Switch, Route } from "react-router-dom";
 //Components
 import AboutUs from "./Pages/AboutUs";
 import Contact from "./Pages/Contact";
-import Home from "./Pages/Home";
+import MenuPage from "./Pages/MenuPage";
+import OptionsMenu from "./Pages/OptionsMenu";
 //Styles
 import './Main.scss';
+
 const Main = () => {
   return (
     <main className="main">
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={MenuPage} />
         <Route path="/about" component={AboutUs} />
         <Route path="/contact" component={Contact} />
+        <Route path="/chicken" component={OptionsMenu} />
       </Switch>
     </main>
   );

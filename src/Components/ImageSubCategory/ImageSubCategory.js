@@ -1,17 +1,22 @@
 import React from 'react';
-import  { ImagesSubCategoriesData } from '../../Assets/Data/ImagesSubcategories';
+//data
+import ImagesSubCategoriesData from '../../Assets/Data/ImagesSubcategories';
+//styles
+import './ImageSubCategory.scss';
 
 const ImageSubCategory = () => {
-    console.log(ImagesSubCategoriesData.Chickens, 'heloooooooooooooooooooooooooooooo');
-    const OptionsMenu = ImagesSubCategoriesData.Chickens.map(chicken => (
-        <div className="subcategory-card">
-            <img className="subcategory-card__image" src={require(`../../Assets/Images/${chicken.img}.png`)} alt={chicken.flavor} />
-            <h4 className="subcategory-card__title">{chicken.flavor}</h4>
-        </div>
-    ));
+    console.log(ImagesSubCategoriesData.chickens );
+    const OptionsMenu = ImagesSubCategoriesData.chickens.map(chicken => {
+        return (
+            <div className="subcategory-card" key={chicken.flavor}>
+                <img className="subcategory-card__image" src={require(`../../Assets/Images/${chicken.img}.png`)} alt={chicken.flavor} />
+                <h4 className="subcategory-card__title">{chicken.flavor}</h4>
+            </div>
+        )
+    });
     return (
         <div className="subcategory">
-            <OptionsMenu />
+            {OptionsMenu}
         </div>
     )
 }

@@ -15,6 +15,15 @@ $text-shadow-category: 5px 2px 2px #f34500;
         border-right: solid 2px #ffe600;
         border-top: solid 2px #f34500;
         border-left: solid 2px #f34500;
+        @media screen and (max-width: 1350px) {
+            width: 300px;
+            height: 200px;
+        }
+        @media screen and (max-width: 1050px) {
+            width: 250px;
+            height: 150px;
+        }
+        
     }
     &__link {
         text-decoration: none;
@@ -34,5 +43,9 @@ $text-shadow-category: 5px 2px 2px #f34500;
         &:hover {
             filter: grayscale(0);
         }
+        @media screen and (max-width: 1050px) {
+            font-size: 25px;
+        }
+        
     }
 }

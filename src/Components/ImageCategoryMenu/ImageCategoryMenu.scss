@@ -24,6 +24,21 @@ $text-shadow-category: 5px 2px 2px #f34500;
             height: 150px;
         }
         
+        @media screen and (max-width: 900px) {
+            width: 220px;
+            height: 150px;
+        }
+        
+        @media screen and (max-width: 900px) {
+            width: 220px;
+            height: 150px;
+        }
+        
+        @media screen and (max-width: 800px) {
+            width: 300px;
+            height: 200px;
+        }
+        
     }
     &__link {
         text-decoration: none;
@@ -43,8 +58,17 @@ $text-shadow-category: 5px 2px 2px #f34500;
         &:hover {
             filter: grayscale(0);
         }
+
+        @media screen and (max-width: 1350px) {
+            font-size: 32px;
+        }
+
         @media screen and (max-width: 1050px) {
             font-size: 25px;
+        }
+
+        @media screen and (max-width: 800px) {
+            font-size: 30px;
         }
         
     }

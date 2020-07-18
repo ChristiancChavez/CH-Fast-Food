@@ -5,6 +5,10 @@
     border-radius: 12px;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     flex-flow: column;
-
+    height: 70vh;
+    h2 {
+        margin-bottom: 30px;
+    }
 }

@@ -16,7 +16,9 @@ const Main = () => {
         <Route exact path="/" component={MenuPage} />
         <Route path="/about" component={AboutUs} />
         <Route path="/contact" component={Contact} />
-        <Route path="/chicken" component={OptionsMenu} />
+        <Route path="/chicken" component={() => <OptionsMenu category='chickens'/>} />
+        <Route path="/hamburger" component={() => <OptionsMenu category='hamburgers'/>} />
+        <Route path="/pizza" component={() => <OptionsMenu category='pizzas'/>} />
       </Switch>
     </main>
   );

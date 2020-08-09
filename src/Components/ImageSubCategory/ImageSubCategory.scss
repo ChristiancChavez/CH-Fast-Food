@@ -28,13 +28,15 @@ $text-shadow-title: 5px 2px 2px #f34500;
         justify-content: flex-start;
         text-align: center;
         border-radius: 12px;
-        border: solid 2px #ffe600;
+        border: none;
         margin: 10px;
         padding: 10px;
         width: 170px;
         min-width: 90px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.685), 0 6px 20px 0 rgba(0, 0, 0, 0.685);
         &:hover {
             background: #b99551;
+            box-shadow: none;
         }
 
         @media screen and (max-width: 650px) {

@@ -2,10 +2,14 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 50px;
+    background-image: linear-gradient(to right, rgb(82, 80, 80) , rgb(133, 133, 129));
+    border-radius: 12px;
+    margin: 15px;
+    padding: 15px;
     &__icon {
         cursor: pointer;
         &__image {
-            width: 130px;
+            width: 40px;
             filter: grayscale(85%);
             &:hover {
                 filter: grayscale(0);

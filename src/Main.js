@@ -3,7 +3,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 //Components
 import AboutUs from "./Pages/AboutUs";
-import Contact from "./Pages/Contact";
+import Services from "./Pages/Services";
 import MenuPage from "./Pages/MenuPage";
 import OptionsMenu from "./Pages/OptionsMenu";
 //Styles
@@ -15,7 +15,7 @@ const Main = () => {
       <Switch>
         <Route exact path="/" component={MenuPage} />
         <Route path="/about" component={AboutUs} />
-        <Route path="/contact" component={Contact} />
+        <Route path="/services" component={Services} />
         <Route path="/chicken" component={() => <OptionsMenu category='chickens'/>} />
         <Route path="/hamburger" component={() => <OptionsMenu category='hamburgers'/>} />
         <Route path="/pizza" component={() => <OptionsMenu category='pizzas'/>} />

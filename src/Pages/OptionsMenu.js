@@ -8,7 +8,7 @@ const OptionsMenu = ({ category }) => {
   console.log(category, 'im here on OptionsMenu');
   return (
     <Fragment>
-        <HeaderPage title="Our wonderful {category}" />
+        <HeaderPage title={`Our wonderful *${category.toUpperCase()}*`} />
         <ImageSubCategory  optionCategory={category}/>
         <Button text="I wanna eat it" />
     </Fragment>

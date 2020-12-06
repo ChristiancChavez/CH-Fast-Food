@@ -5,9 +5,9 @@ import socialMediaAccounts from '../../Assets/Data/SocialMediaAccounts';
 import './SocialMedia.scss';
 
 const SocialMedia = () => {
-    const showSocialmedia = socialMediaAccounts.map(socialMediaAccount => {
+    const showSocialmedia = socialMediaAccounts.map((socialMediaAccount, index) => {
         return (
-            <a href={`https://www.${socialMediaAccount}.com`} className="social__icon" target="blank"><img className="social__icon__image" src={require(`../../Assets/Images/${socialMediaAccount}.png`)} alt={socialMediaAccount} key={socialMediaAccount}/></a>
+            <a href={`https://www.${socialMediaAccount}.com`} className="social__icon" target="blank" key={socialMediaAccount}><img className="social__icon__image" src={require(`../../Assets/Images/${socialMediaAccount}.png`)} alt={socialMediaAccount} /></a>
         )
     })
     return (

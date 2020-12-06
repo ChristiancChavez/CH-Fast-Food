@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 //Components
-import ImageSubCategory from '../Components/ImageSubCategory/ImageSubCategory';
+import SubCategory from '../Components/SubCategory/SubCategory';
 import Button from '../Components/Button/Button';
 import HeaderPage from '../Components/HeaderPages/HeaderPages';
 
@@ -9,7 +9,7 @@ const OptionsMenu = ({ category }) => {
   return (
     <Fragment>
         <HeaderPage title={`Our wonderful *${category.toUpperCase()}*`} />
-        <ImageSubCategory  optionCategory={category}/>
+        <SubCategory  optionCategory={category}/>
         <Button text="I wanna eat it" />
     </Fragment>
   );

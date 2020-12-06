@@ -1,6 +1,6 @@
 import React from 'react';
 //Components
-import ImageCategoryMenu from '../ImageCategoryMenu/ImageCategoryMenu';
+import CategoryMenu from '../CategoryMenu/CategoryMenu';
 import HeaderPage from '../HeaderPages/HeaderPages';
 //Data
 import categoriesMenu from '../../Assets/Data/categoriesMenu';
@@ -9,7 +9,7 @@ import './Menu.scss';
 
 const Menu = () => {
     const ShowCategoriesMenu = categoriesMenu.map(categoryMenu => {
-        return <ImageCategoryMenu img={categoryMenu.img} category={categoryMenu.category} page={categoryMenu.page} />
+        return <CategoryMenu img={categoryMenu.img} category={categoryMenu.category} page={categoryMenu.page} />
     })
     return (
         <div className="menu">

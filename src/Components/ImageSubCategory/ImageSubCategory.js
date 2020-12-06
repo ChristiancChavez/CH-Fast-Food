@@ -13,6 +13,11 @@ const ImageSubCategory = ({ optionCategory }) => {
             <div className="subcategory-card" key={option.flavor}>
                 <img className="subcategory-card__image" src={require(`../../Assets/Images/${option.img}.png`)} alt={option.flavor} />
                 <h4 className="subcategory-card__title">{option.flavor}</h4>
+                <div className="subcategory-card__counter">
+                    <buton className="subcategory-card__counter__button subcategory-card__counter__button--left">-</buton>
+                    <span className="subcategory-card__counter__amount">0</span>
+                    <buton className="subcategory-card__counter__button subcategory-card__counter__button--right">+</buton>
+                </div>
             </div>
         )
     });

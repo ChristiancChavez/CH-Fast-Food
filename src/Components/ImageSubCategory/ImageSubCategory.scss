@@ -3,9 +3,6 @@ $text-shadow-title: 5px 2px 2px #f34500;
 .subcategory {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    row-gap: 15px ;
-    justify-items: center;
-    cursor: pointer;
 
     @media screen and (max-width: 1320px) {
         grid-template-rows: repeat(2, 1fr);
@@ -32,14 +29,10 @@ $text-shadow-title: 5px 2px 2px #f34500;
         border-radius: 12px;
         border: none;
         margin: 10px;
-        padding: 10px;
+        padding: 10px 0 0 0;
         width: 170px;
         min-width: 90px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.685), 0 6px 20px 0 rgba(0, 0, 0, 0.685);
-        &:hover {
-            background: #b99551;
-            box-shadow: none;
-        }
 
         @media screen and (max-width: 650px) {
             width: 200px;
@@ -74,6 +67,48 @@ $text-shadow-title: 5px 2px 2px #f34500;
 
             @media screen and (max-width: 540px) {
                 font-size: 2rem;
+            }
+        }
+        &__counter {
+            display: flex;
+            border-top: 1px solid black;
+            flex-flow: row nowrap;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-top: 10px;
+            padding: 0;
+            background: lightgrey;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            font-size: 18px;
+            width: 100%;
+            &__button {
+                font-weight: 700;
+                width: 100%;
+                padding: 10px;
+                font-size: 20px;
+                cursor: pointer;
+                &:hover {
+                    background: #e2cc03;
+                    color: #f34500;
+                }
+                &--left {
+                    border-right: 1px solid black;
+                    &:hover {
+                        border-bottom-left-radius: 12px;
+                    }
+                }
+                &--right {
+                    border-left: 1px solid black;
+                    &:hover {
+                        border-bottom-right-radius: 12px;
+                        border-bottom-left-radius: 0;
+                    }
+                }
+            }
+            &__amount {
+                width: 100%;
+                padding: 5px 0;
             }
         }
     }

@@ -1,6 +1,7 @@
 import React from 'react';
 //Components
 import ImageCategoryMenu from '../ImageCategoryMenu/ImageCategoryMenu';
+import HeaderPage from '../HeaderPages/HeaderPages';
 //Data
 import categoriesMenu from '../../Assets/Data/categoriesMenu';
 //Styles
@@ -12,7 +13,7 @@ const Menu = () => {
     })
     return (
         <div className="menu">
-            <h4 className="menu__title">Taste our delicious flavors</h4>
+            <HeaderPage title="Taste Our Awesome Flavors" />
             <div className="menu__categories">
                 {ShowCategoriesMenu}
             </div>

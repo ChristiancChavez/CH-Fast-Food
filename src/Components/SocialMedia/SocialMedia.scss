@@ -1,0 +1,15 @@
+.social {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 50px;
+    &__icon {
+        cursor: pointer;
+        &__image {
+            width: 130px;
+            filter: grayscale(85%);
+            &:hover {
+                filter: grayscale(0);
+            }
+        }
+    }
+}

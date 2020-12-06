@@ -1,14 +1,16 @@
 import React, { Fragment } from "react";
+//Components
 import ImageSubCategory from '../Components/ImageSubCategory/ImageSubCategory';
 import Button from '../Components/Button/Button';
+import HeaderPage from '../Components/HeaderPages/HeaderPages';
 
 const OptionsMenu = ({ category }) => {
   console.log(category, 'im here on OptionsMenu');
   return (
     <Fragment>
-        <h2>Our wonderful {category}</h2>
+        <HeaderPage title="Our wonderful {category}" />
         <ImageSubCategory  optionCategory={category}/>
-        <Button />
+        <Button text="I wanna eat it" />
     </Fragment>
   );
 };

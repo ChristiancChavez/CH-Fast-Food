@@ -1,4 +1,6 @@
 import React from 'react';
+//Dependencies
+import PropTypes from 'prop-types';
 //data
 import ImagesSubCategoriesData from '../../Assets/Data/ImagesSubcategories';
 //styles
@@ -19,6 +21,10 @@ const ImageSubCategory = ({ optionCategory }) => {
             {OptionsMenu}
         </div>
     )
+}
+
+ImageSubCategory.propTypes = {
+    optionCategory: PropTypes.string
 }
 
 export default ImageSubCategory;

@@ -1,10 +1,14 @@
-import React from "react";
+import React, { Fragment } from "react";
+//components
+import HeaderPage from '../Components/HeaderPages/HeaderPages';
+import SocialMedia from '../Components/SocialMedia/SocialMedia';
 
 const Contact = () => {
   return (
-    <div>
-      <h1>¡Bienvenidos a Contact!</h1>
-    </div>
+    <Fragment>
+      <HeaderPage title="Welcome to Contact Us!" />
+      <SocialMedia />
+    </Fragment>
   );
 };
 

@@ -17,6 +17,7 @@ const ImageCategoryMenu = ({ img, category, page}) => {
 ImageCategoryMenu.protoTypes = {
     img: PropTypes.string,
     category: PropTypes.string,
+    page: PropTypes.string,
 }
 
 export default ImageCategoryMenu;

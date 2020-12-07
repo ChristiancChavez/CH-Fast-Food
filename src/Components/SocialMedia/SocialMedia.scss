@@ -6,6 +6,9 @@
     border-radius: 12px;
     margin: 15px;
     padding: 15px;
+    @media screen and (max-width: 450px) {
+        column-gap: 30px;
+    }
     &__icon {
         cursor: pointer;
         &__image {
@@ -13,6 +16,9 @@
             filter: grayscale(85%);
             &:hover {
                 filter: grayscale(0);
+            }
+            @media screen and (max-width: 450px) {
+                width: 30px;
             }
         }
     }

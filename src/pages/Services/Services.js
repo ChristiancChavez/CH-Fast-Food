@@ -1,9 +1,9 @@
-import React, { Fragment } from "react";
+import React from "react";
 //components
-import HeaderPage from '../Components/HeaderPages/HeaderPages';
+import HeaderPage from '../../components/HeaderPages';
 
-const Contact = () => {
-  const paragraph = `Wedding Services Catering
+const Contact = () => (
+  <HeaderPage title="Welcome to Services!" paragraph="Wedding Services Catering
   No wedding reception is complete without a wide array of dishes to satisfy the appetite of the guests. Wedding catering, 
   as the name suggests, aims to supply sumptuous dishes as well as an enchanting ambience for the guests of the bride and 
   groom on their special day.
@@ -13,12 +13,7 @@ const Contact = () => {
   well-suited for any corporate event.
   Cocktail Reception
   Cocktail reception or high tea catering places great emphasis on delectable finger food and spectacular drinks for the guests. 
-  With many of the attendees meeting and mingling, plates that are easy to munch on.`
-  return (
-    <Fragment>
-      <HeaderPage title="Welcome to Services!" paragraph={paragraph} />
-    </Fragment>
+  With many of the attendees meeting and mingling, plates that are easy to munch on." />
   );
-};
 
 export default Contact;

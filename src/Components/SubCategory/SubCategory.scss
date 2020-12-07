@@ -1,12 +1,18 @@
 $color-title: #ffe600;
 $text-shadow-title: 5px 2px 2px #f34500;
 .subcategory {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
 
     @media screen and (max-width: 1320px) {
+        display: grid;
+        justify-items: center;
         grid-template-rows: repeat(2, 1fr);
         grid-template-columns: repeat(3, 1fr);
+        row-gap: 30px;
     }
 
     @media screen and (max-width: 715px) {

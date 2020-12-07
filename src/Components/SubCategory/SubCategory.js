@@ -2,31 +2,36 @@ import React, { Component } from 'react';
 //Dependencies
 import PropTypes from 'prop-types';
 //Components
-import OptionsSubcategory from '../OptionsSubCategory/OptionsSubcategory';
+import OptionsSubcategory from '../OptionsSubCategory';
 //data
-import SubCategoriesData from '../../Assets/Data/Subcategories';
+import SubCategoriesData from '../../utils/subcategories';
 //styles
 import './SubCategory.scss';
 
 class SubCategory extends Component {
     state = {
-        counter: 0
+        product: 0
     };
 
     handleAddProductCounter = () => {
-        console.log('handleAdd');
+        this.setState({
+            product: this.state.product + 1
+        });
     };
 
     handleReduceProductCounter = () => {
-        console.log('handleReduce');
+        this.setState({
+            product: this.state.product -1
+        });
     };
 
 
     render() {
         const { optionCategory } = this.props;
+        const { product } = this.state;
         const OptionsMenu = SubCategoriesData[optionCategory].map((option, index) => {
             return (
-                <OptionsSubcategory option={option} handleReduceProductCounter={this.handleReduceProductCounter} handleAddProductCounter={this.handleAddProductCounter} key={index}/>
+                <OptionsSubcategory option={option} product={product} handleReduceProductCounter={this.handleReduceProductCounter} handleAddProductCounter={this.handleAddProductCounter} key={index}/>
             )
         });
         return (

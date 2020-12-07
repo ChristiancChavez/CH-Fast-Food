@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: space-evenly;
 }
-.menu {
+.home {
     @extend %position-category;
     flex-flow: column nowrap;
     @media screen and (max-width: 800px) {

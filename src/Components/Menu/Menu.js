@@ -1,15 +1,15 @@
 import React from 'react';
 //Components
-import CategoryMenu from '../CategoryMenu/CategoryMenu';
-import HeaderPage from '../HeaderPages/HeaderPages';
+import CategoryMenu from '../CategoryMenu';
+import HeaderPage from '../HeaderPages';
 //Data
-import categoriesMenu from '../../Assets/Data/categoriesMenu';
+import categoriesMenu from '../../utils/categoriesMenu';
 //Styles
 import './Menu.scss';
 
 const Menu = () => {
     const ShowCategoriesMenu = categoriesMenu.map(categoryMenu => {
-        return <CategoryMenu img={categoryMenu.img} category={categoryMenu.category} page={categoryMenu.page} />
+        return <CategoryMenu img={categoryMenu.img} category={categoryMenu.category} page={categoryMenu.page} key={categoryMenu.category} />
     })
     return (
         <div className="menu">

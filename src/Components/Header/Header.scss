@@ -18,7 +18,7 @@ $text-shadow-header: 5px 2px 2px #f34500;
     margin: 15px;
     @extend %distribution-header;
 
-    @media screen and (max-width: 540px){
+    @media screen and (max-width: 715px){
         flex-flow: column nowrap;
     }
 
@@ -27,14 +27,7 @@ $text-shadow-header: 5px 2px 2px #f34500;
         width: 30%;
         font-size: 2.5rem;
 
-        @media screen and (max-width: 714px){
-            flex-flow: column nowrap;
-            font-size: 2.5rem;
-            margin: 15px 0;
-            width: 20%;
-        }
-
-        @media screen and (max-width: 540px){
+        @media screen and (max-width: 715px){
             flex-flow: row nowrap;
             width: 100%;
         }
@@ -55,6 +48,9 @@ $text-shadow-header: 5px 2px 2px #f34500;
         @media screen and (max-width: 450px){
             font-size: 3rem;
             margin: 15px 0;
+        }
+        @media screen and (max-width: 450px){
+            font-size: 2.7rem;
         }
     }
 }

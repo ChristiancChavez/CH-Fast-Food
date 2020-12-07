@@ -2,7 +2,7 @@ import React from 'react';
 //Dependencies
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
-import './CategoryMenu.scss';
+import './categoryMenu.scss';
 const CategoryMenu = ({ img, category, page}) => {
     return (
         <div className="category">

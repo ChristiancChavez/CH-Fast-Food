@@ -4,9 +4,9 @@ import OptionsHeader from '../OptionsHeader';
 //Dependencies
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUsers, faBriefcase, faStroopwafel } from '@fortawesome/free-solid-svg-icons';
-
 //Styles
-import  './Header.scss';
+import  './header.scss';
+
 const Header = () => {
     library.add(faUsers, faBriefcase, faStroopwafel);
     return (

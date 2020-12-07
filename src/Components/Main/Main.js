@@ -8,7 +8,7 @@ import Home from "../../pages/Home";
 //Components
 import OptionsMenu from "../OptionsMenu";
 //Styles
-import './Main.scss';
+import './main.scss';
 
 const Main = () => (
   <main className="main">

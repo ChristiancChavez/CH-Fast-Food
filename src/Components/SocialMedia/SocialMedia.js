@@ -2,7 +2,7 @@ import React from 'react';
 //Data
 import socialMediaAccounts from '../../utils/socialMediaAccounts';
 //Styles
-import './SocialMedia.scss';
+import './socialMedia.scss';
 
 const SocialMedia = () => (
     <div className="social">

@@ -1,49 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
 //Dependencies
 import PropTypes from 'prop-types';
 //Components
 import OptionsSubcategory from '../OptionsSubCategory';
 //data
-import SubCategoriesData from '../../utils/subcategories';
+import subCategoriesData from '../../utils/subcategories';
 //styles
-import './SubCategory.scss';
+import './subCategory.scss';
 
-class SubCategory extends Component {
-    state = {
-        product: 0
-    };
-
-    handleAddProductCounter = () => {
-        this.setState({
-            product: this.state.product + 1
-        });
-    };
-
-    handleReduceProductCounter = () => {
-        this.setState({
-            product: this.state.product -1
-        });
-    };
-
-
-    render() {
-        const { optionCategory } = this.props;
-        const { product } = this.state;
-        const OptionsMenu = SubCategoriesData[optionCategory].map((option, index) => {
-            return (
-                <OptionsSubcategory option={option} product={product} handleReduceProductCounter={this.handleReduceProductCounter} handleAddProductCounter={this.handleAddProductCounter} key={index}/>
+const SubCategory = ({ optionCategory, products }) => (
+    <div className="subcategory">
+        {subCategoriesData[optionCategory].map((option, index) => (
+            <OptionsSubcategory option={option} products={products} key={index}/>
             )
-        });
-        return (
-            <div className="subcategory">
-                {OptionsMenu}
-            </div>
-        )
-    }
-} 
+        )}
+    </div>
+)
 
 SubCategory.propTypes = {
-    optionCategory: PropTypes.string
+    optionCategory: PropTypes.string,
+    products: PropTypes.object
 }
 
 export default SubCategory;

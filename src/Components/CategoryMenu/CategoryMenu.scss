@@ -59,6 +59,7 @@ $text-shadow-category: 5px 2px 2px #f34500;
         border-radius: 12px;
         cursor: pointer;
         filter: grayscale(1.0);
+        text-align: center;
         &:hover {
             filter: grayscale(0);
         }

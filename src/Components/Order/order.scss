@@ -1,0 +1,41 @@
+.order {
+    background: rgba(0, 0, 0, 0.842);
+    position: absolute;
+    z-index: 5;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    &-list {
+        background-image: linear-gradient(to right, rgb(82, 80, 80) , rgb(133, 133, 129));
+        padding: 20px;
+        border-radius: 12px;
+        color: white;
+        font-size: 30px;
+        &__product {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px;
+            &--total {
+                border-top: 1px solid black;
+                padding-top: 10px;
+                color: black;
+            }
+            &__option {
+                font-weight: 700;
+                margin-right: 50px;
+                min-width: 170px;
+                &--amount {
+                    min-width: 60px;
+
+                }
+            }
+        }
+    }
+}

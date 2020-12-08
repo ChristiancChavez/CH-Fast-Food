@@ -1,15 +1,15 @@
 import React from 'react';
-import Header from './Components/Header/Header';
-import Main from './Main';
-import './App.css';
+//Components
+import Header from './components/Header';
+import Main from './components/Main';
+import SocialMedia from './components/SocialMedia';
 
-function App() {
-  return (
-    <div className="App">
-      <Header />
-      <Main />
-    </div>
-  );
-}
+const App = () => (
+  <>
+    <Header />
+    <Main />
+    <SocialMedia />
+  </>
+);
 
 export default App;

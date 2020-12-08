@@ -1,20 +1,27 @@
 import React from 'react';
 //Data
-import socialMediaAccounts from '../../Assets/Data/SocialMediaAccounts';
+import socialMediaAccounts from '../../utils/socialMediaAccounts';
 //Styles
-import './SocialMedia.scss';
+import './socialMedia.scss';
 
-const SocialMedia = () => {
-    const showSocialmedia = socialMediaAccounts.map(socialMediaAccount => {
-        return (
-            <a href={`https://www.${socialMediaAccount}.com`} className="social__icon" target="blank"><img className="social__icon__image" src={require(`../../Assets/Images/${socialMediaAccount}.png`)} alt={socialMediaAccount}/></a>
-        )
-    })
-    return (
-        <div className="social">
-            {showSocialmedia}
-        </div>
-    )
-} 
+const SocialMedia = () => (
+    <div className="social">
+        {socialMediaAccounts.map(socialMediaAccount => (
+                <a
+                    href={`https://www.${socialMediaAccount}.com`}
+                    className="social__icon"
+                    target="blank"
+                    key={socialMediaAccount}>
+                    <img
+                        className="social__icon__image"
+                        src={require(`../../assets/images/${socialMediaAccount}.png`)}
+                        alt={socialMediaAccount}
+                    />
+                </a>
+            )
+        )}
+    </div>
+);
+
 
 export default SocialMedia;

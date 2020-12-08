@@ -43,7 +43,7 @@ const initialStatePizza = {
     pizzas: 10
 };
 
-const pizzaReducer = (state = initialStateHamburguer, action) => {
+const pizzaReducer = (state = initialStatePizza, action) => {
     switch(action.type) {
         case BUY_PIZZA: return {
             ...state,

@@ -7,38 +7,37 @@ import Order from '../Order';
 
 class OptionsMenu extends Component {
   state = {
-    showOrder: false
+    showOrder: false, 
+    hamburgers: {
+      Cheese: 0,
+      Vegetarian: 0,
+      Chicken: 0,
+      Bacon: 0,
+      DoubleMeat: 0,
+      Mexican: 0,
+    },
+    chickens: {
+      Broaster: 0,
+      Fried: 0,
+      Spicy: 0,
+      BBQ: 0,
+      Bittersweet: 0,
+      'Sour Cream': 0,
+    },
+    pizzas: {
+      Hawaiana: 0,
+      Tropical: 0,
+      Veggies: 0,
+      Meats: 0,
+      'Chicken Mushroom': 0,
+      Mexican: 0,
+      
+    }
   }
 
   handleRenderOrder = () => {
     this.setState({
       showOrder: true,
-      products: { 
-        hamburgers: {
-          Hawaiana: 0,
-          Tropical: 0,
-          Veggies: 0,
-          Meats: 0,
-          'Chicken Mushroom': 0,
-          Mexican: 0,
-        },
-        chickens:{
-          Cheese: 0,
-          Vegetarian: 0,
-          Chicken: 0,
-          Bacon: 0,
-          DoubleMeat: 0,
-          Mexican: 0,
-        },
-        pizzas:{
-          Broaster: 0,
-          Fried: 0,
-          Spicy: 0,
-          BBQ: 0,
-          Bittersweet: 0,
-          'Sour Cream': 0,
-        }
-      }
     })
   } 
 
@@ -48,16 +47,27 @@ class OptionsMenu extends Component {
     })
   }
 
+  handleUpdateProduct = (category, flavor, amount) => {
+    if(amount >= 0){
+    this.setState({
+      [category[flavor]]: amount,
+    })
+    console.log('updatedProduct', amount);
+  }
+  }
 
   render() {
     const { category } = this.props;
-    const { showOrder, products } = this.state;
+    const { showOrder } = this.state;
     return (
       <>
         <HeaderPage title={`Our wonderful *${category.toUpperCase()}*`} />
-        <SubCategory  optionCategory={category} products={products} />
+        <SubCategory 
+          handleUpdateProduct={this.handleUpdateProduct}  
+          optionCategory={category} 
+        />
         <Button text="I wanna eat it" handleMethod={this.handleRenderOrder} />
-        {showOrder && <Order handleCloseOrder={this.handleCloseOrder} /> }
+        {showOrder && <Order order={this.state[category]} categoryProduct={category} handleCloseOrder={this.handleCloseOrder} /> }
       </>
     )
     

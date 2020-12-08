@@ -30,6 +30,11 @@
             &__option {
                 font-weight: 700;
                 margin-right: 50px;
+                min-width: 170px;
+                &--amount {
+                    min-width: 60px;
+
+                }
             }
         }
     }

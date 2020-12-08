@@ -8,7 +8,7 @@ import './optionsHeader.scss';
 
 const OptionsHeader = ({ name,  route }) => (
     <Link className="optionsHeader" to={route}>
-        <FontAwesomeIcon  icon={name} />
+        <FontAwesomeIcon icon={name} />
     </Link>
 )
 

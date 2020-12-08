@@ -8,10 +8,16 @@ import subCategoriesData from '../../utils/subcategories';
 //styles
 import './subCategory.scss';
 
-const SubCategory = ({ optionCategory, products }) => (
+const SubCategory = ({ optionCategory, products, handleUpdateProduct }) => (
     <div className="subcategory">
         {subCategoriesData[optionCategory].map((option, index) => (
-            <OptionsSubcategory option={option} products={products} key={index}/>
+            <OptionsSubcategory 
+                handleUpdateProduct={handleUpdateProduct} 
+                option={option} 
+                products={products} 
+                key={index}
+                category={optionCategory}
+            />
             )
         )}
     </div>

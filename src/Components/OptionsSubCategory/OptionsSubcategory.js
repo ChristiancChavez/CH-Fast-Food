@@ -6,31 +6,35 @@ import './OptionsSubcategory.scss';
 
 class OptionsSubcategory extends Component {
     state = {
-        product: 0
+        totalProduct: 0
     };
 
-    handleAddProductCounter = () => {
+    handleAddProductCounter = (category, flavor, amount) => {
         this.setState({
-            product: this.state.product + 1
+            totalProduct: this.state.totalProduct + 1
         });
+        this.props.handleUpdateProduct(category, flavor, amount);
     };
 
-    handleReduceProductCounter = () => {
-        this.setState({
-            product: this.state.product -1
-        });
+    handleReduceProductCounter = (category, flavor, amount) => {
+        if(this.state.totalProduct > 0){
+            this.setState({
+                totalProduct: this.state.totalProduct -1
+            });
+            this.props.handleUpdateProduct(category, flavor, amount);
+        }
     };
     render(){
-        const { option } = this.props;
-        const { product } = this.state;
+        const { option, category } = this.props;
+        const { totalProduct } = this.state;
         return (
             <div className="options-subcategory">
                 <img className="options-subcategory__image" src={require(`../../assets/images/${option.img}.png`)} alt={option.flavor} />
                 <h4 className="options-subcategory__title">{option.flavor}</h4>
                 <div className="options-subcategory__counter">
-                    <button className="options-subcategory__counter__button options-subcategory__counter__button--left" onClick={this.handleReduceProductCounter}>-</button>
-                    <span className="options-subcategory__counter__amount">{product}</span>
-                    <button className="options-subcategory__counter__button options-subcategory__counter__button--right" onClick={this.handleAddProductCounter}>+</button>
+                    <button className="options-subcategory__counter__button options-subcategory__counter__button--left" onClick={() => this.handleReduceProductCounter(category, option.flavor, totalProduct)}>-</button>
+                    <span className="options-subcategory__counter__amount">{totalProduct}</span>
+                    <button className="options-subcategory__counter__button options-subcategory__counter__button--right" onClick={() => this.handleAddProductCounter(category, option.flavor, totalProduct)}>+</button>
                 </div>
             </div>
         )

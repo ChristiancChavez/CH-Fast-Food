@@ -9,7 +9,7 @@ import './calories.scss';
 
 const Calories = () => {
     const categoriesCalories = ['hamburguer', 'pizza', 'chicken'];
-    const options = {
+    const requestData = {
         method: 'GET',
         url: 'https://calorieninjas.p.rapidapi.com/v1/nutrition',
         params: {query: 'hamburger'},
@@ -22,7 +22,7 @@ const Calories = () => {
 
     useEffect(() => {
         async function fetchData() {
-            const request = await axios.request(options).then(function (response) {
+            const request = await axios.request(requestData).then(function (response) {
                 return response.data;
             }).catch(function (error) {
                 console.error(error);
@@ -32,6 +32,7 @@ const Calories = () => {
         }
         fetchData();
     },[]);
+    
     const renderCategories = categoriesCalories.map((categoryCalories, index) => (<CaloriesItem key={index} category={categoryCalories} caloriesList={caloriesList} />))
     return (
         <>

@@ -6,17 +6,18 @@ import subCategoriesData from '../../utils/subcategories';
 import './order.scss';
 
 const Order = ({ handleCloseOrder, order, categoryProduct }) => {
+    //Create array with state filtering objetcs with amount
     const currentOrder = Object.keys(order).reduce((acc, product) => {
         const productIndex = subCategoriesData[categoryProduct].findIndex(prod => prod.flavor === product);
-        const flavorSelected = { product: Object.keys(order)[productIndex], amount: order[product], cost: subCategoriesData[categoryProduct][productIndex].cost }
+        const flavorSelected = { product: Object.keys(order)[productIndex], amount: order[product], cost: (subCategoriesData[categoryProduct][productIndex].cost) * order[product] }
         if(flavorSelected.amount > 0){
             acc.push(flavorSelected);
         }
         return acc;
     },[]);
-
+    //Get total cost with sum of product's cost.
     let totalCost = currentOrder.reduce((acc, item)=> {
-        return acc + item.cost
+        return acc + item.cost;
     }, 0);
 
     return (

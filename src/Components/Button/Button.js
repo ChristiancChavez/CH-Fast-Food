@@ -6,7 +6,7 @@ import './button.scss';
 
 const Button = ({ text, handleMethod }) => {
     return (
-        <button className="button" type="button" onClick={() => handleMethod(text)}>{text}</button> 
+        <button className="button" type="button" onClick={handleMethod}>{text}</button> 
     )   
 }
 

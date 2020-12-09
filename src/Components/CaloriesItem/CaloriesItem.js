@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import './caloriesItem.scss';
 
 const CaloriesItem = ({ caloriesList, category }) => {
-
+    //Create array with calories Data of API 
     const categoriesCalories = Object.keys(caloriesList);
     const dataCalories = categoriesCalories.reduce((acc, categoryCalories) => {
         const indexCategory = categoriesCalories.indexOf(categoryCalories);
@@ -13,6 +13,7 @@ const CaloriesItem = ({ caloriesList, category }) => {
         acc.push(category);
         return acc;
     },[]);
+    
     return (
         <div className="calories-item">
             <h2 className="calories-item__title">{category}</h2>

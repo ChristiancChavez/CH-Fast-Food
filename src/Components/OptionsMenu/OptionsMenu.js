@@ -50,15 +50,19 @@ class OptionsMenu extends Component {
   handleUpdateProduct = (category, flavor, amount) => {
     if(amount >= 0){
     this.setState({
-      [category[flavor]]: amount,
+      [category]: {
+        ...this.state[category],
+        [flavor]: amount,
+      },
     })
-    console.log('updatedProduct', amount);
+    console.log('updatedProduct',category, flavor, amount);
   }
   }
-
+  
   render() {
     const { category } = this.props;
     const { showOrder } = this.state;
+    console.log(this.state);
     return (
       <>
         <HeaderPage title={`Our wonderful *${category.toUpperCase()}*`} />

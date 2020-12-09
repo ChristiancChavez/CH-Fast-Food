@@ -1,173 +1,44 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 //Components
 import HeaderPage from '../../components/HeaderPages';
+import CaloriesItem from '../../components/CaloriesItem'
+//Dependencies 
+import axios from "axios";
 //Styles
 import './calories.scss';
 
-const Calories = () => (
-    <>
-        <HeaderPage title="Calories of our products" />
-        <div className="calories">
-            <div className="calories__content">
-                <h2 className="calories__content__title">Hamburguer</h2>
-                <div className="calories__content-card">
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                </div>
+const Calories = () => {
+    const options = {
+        method: 'GET',
+        url: 'https://calorieninjas.p.rapidapi.com/v1/nutrition',
+        params: {query: 'hamburger'},
+        headers: {
+        'x-rapidapi-key': '47eb03ca64msh417151b3774ef0ap1e5bddjsn09f96aaeee65',
+        'x-rapidapi-host': 'calorieninjas.p.rapidapi.com'
+        }
+    };
+    const [caloriesList, setCaloriesList] = useState({});
+
+    useEffect(() => {
+        async function fetchData() {
+            const request = await axios.request(options).then(function (response) {
+                return response.data;
+            }).catch(function (error) {
+                console.error(error);
+            });
+            setCaloriesList(request.items[0]);
+            return request.items[0];
+        }
+        fetchData();
+    },[]);
+    console.log(caloriesList, 'hfhdbfhd');
+    return (
+        <>
+            <HeaderPage title="Calories of our products" />
+            <div className="calories">
+                {!!Object.keys(caloriesList).length && <CaloriesItem caloriesList={caloriesList} />}
             </div>
-            <div className="calories__content">
-                <h2 className="calories__content__title">Hamburguer</h2>
-                <div className="calories__content-card">
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                </div>
-            </div>
-            <div className="calories__content">
-                <h2 className="calories__content__title">Hamburguer</h2>
-                <div className="calories__content-card">
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                    <div className="calories__content-card-items">
-                        <span className="calories__content-card-items__name">Sugar</span>
-                        <span className="calories__content-card-items__amount">100</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </>
-)
+        </>
+    )
+}
 export default Calories;

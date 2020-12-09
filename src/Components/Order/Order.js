@@ -20,7 +20,7 @@ const Order = ({ handleCloseOrder, order, categoryProduct }) => {
                     <div className="order-list__product" key={index}>
                         <span className="order-list__product__option">{items.product}</span>
                         <span className="order-list__product__option order-list__product__option--amount">{items.amount}</span>
-                        <span className="order-list__product__cost">1455</span>
+                        <span className="order-list__product__cost">{items.cost}</span>
                     </div>
                 ))}
                 <div className="order-list__product order-list__product--total">

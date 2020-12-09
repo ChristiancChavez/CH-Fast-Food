@@ -8,6 +8,7 @@ import axios from "axios";
 import './calories.scss';
 
 const Calories = () => {
+    const categoriesCalories = ['hamburguer', 'pizza', 'chicken'];
     const options = {
         method: 'GET',
         url: 'https://calorieninjas.p.rapidapi.com/v1/nutrition',
@@ -31,12 +32,12 @@ const Calories = () => {
         }
         fetchData();
     },[]);
-    console.log(caloriesList, 'hfhdbfhd');
+    const renderCategories = categoriesCalories.map((categoryCalories, index) => (<CaloriesItem key={index} category={categoryCalories} caloriesList={caloriesList} />))
     return (
         <>
             <HeaderPage title="Calories of our products" />
             <div className="calories">
-                {!!Object.keys(caloriesList).length && <CaloriesItem caloriesList={caloriesList} />}
+                {!!Object.keys(caloriesList).length && renderCategories}
             </div>
         </>
     )

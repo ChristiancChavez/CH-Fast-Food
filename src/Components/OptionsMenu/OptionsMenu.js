@@ -31,7 +31,6 @@ class OptionsMenu extends Component {
       Meats: 0,
       'Chicken Mushroom': 0,
       Mexican: 0,
-      
     }
   }
 
@@ -55,14 +54,12 @@ class OptionsMenu extends Component {
         [flavor]: amount,
       },
     })
-    console.log('updatedProduct',category, flavor, amount);
   }
   }
   
   render() {
     const { category } = this.props;
     const { showOrder } = this.state;
-    console.log(this.state);
     return (
       <>
         <HeaderPage title={`Our wonderful *${category.toUpperCase()}*`} />

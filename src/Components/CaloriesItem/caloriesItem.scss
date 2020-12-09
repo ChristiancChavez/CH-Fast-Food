@@ -10,16 +10,14 @@
     border-radius: 12px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.685), 0 6px 20px 0 rgba(0, 0, 0, 0.685);
     padding: 25px 20px;
-    max-width: 230px;
+    width: 300px;
     margin: 10px 20px;
     text-align: center;
-    @media screen and (max-width: 1000px) {
-        min-width: 300px;
+    @media screen and (max-width: 1250px) {
+        margin: 10px;
     }
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 900px) {
         padding: 10px;
-        margin-left: 0;
-        margin-right: 0;
     }
     &__title {
         font-size: 23px;
@@ -27,6 +25,10 @@
         margin-bottom: 30px;
         border-bottom: 2px solid black;
         padding-bottom: 10px;
+        text-transform: capitalize;
+        @media screen and (max-width: 900px) {
+            font-size: 20px;
+        }
     }
     &-card {
         &-items {
@@ -38,14 +40,17 @@
             margin: 5px 10px;
             @media screen and (max-width: 1000px) {
                 margin: 3px 5px;
-            }
-            @media screen and (max-width: 500px) {
                 font-size: 18px;
+            }
+            @media screen and (max-width: 900px) {
                 margin: 5px 30px;
             }
             &__name {
                 font-weight: bold;
                 margin-bottom: 10px;
+                @media screen and (max-width: 900px) {
+                    font-size: 15px;
+                }
             }
             &__amount {
                 color: black;

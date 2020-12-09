@@ -6,13 +6,20 @@ import subCategoriesData from '../../utils/subcategories';
 import './order.scss';
 
 const Order = ({ handleCloseOrder, order, categoryProduct }) => {
-    const currentOrder = Object.keys(order).reduce((add, product) => {
-        let newAdd = add;
+    //Create array with state filtering objetcs with amount
+    const currentOrder = Object.keys(order).reduce((acc, product) => {
         const productIndex = subCategoriesData[categoryProduct].findIndex(prod => prod.flavor === product);
-        newAdd = [...add, { product: Object.keys(order)[productIndex], amount: order[product], cost: subCategoriesData[categoryProduct[productIndex.cost]] }]
-        return newAdd;
-    },[])
-    console.log(Object.keys(order)[0]);
+        const flavorSelected = { product: Object.keys(order)[productIndex], amount: order[product], cost: (subCategoriesData[categoryProduct][productIndex].cost) * order[product] }
+        if(flavorSelected.amount > 0){
+            acc.push(flavorSelected);
+        }
+        return acc;
+    },[]);
+    //Get total cost with sum of product's cost.
+    let totalCost = currentOrder.reduce((acc, item)=> {
+        return acc + item.cost;
+    }, 0);
+
     return (
         <div className="order">
             <div className="order-list">
@@ -20,12 +27,12 @@ const Order = ({ handleCloseOrder, order, categoryProduct }) => {
                     <div className="order-list__product" key={index}>
                         <span className="order-list__product__option">{items.product}</span>
                         <span className="order-list__product__option order-list__product__option--amount">{items.amount}</span>
-                        <span className="order-list__product__cost">{items.cost}</span>
+                <span className="order-list__product__cost">{items.cost}</span>
                     </div>
                 ))}
                 <div className="order-list__product order-list__product--total">
                     <span className="order-list__product__option">TOTAL</span>
-                    <span className="order-list__product__cost">4.50</span>
+                    <span className="order-list__product__cost">$ {totalCost}</span>
                 </div>
             </div>
             <Button text="Let's do it" handleMethod={handleCloseOrder} />

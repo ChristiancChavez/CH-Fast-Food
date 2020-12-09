@@ -1,6 +1,6 @@
 .order {
     background: rgba(0, 0, 0, 0.842);
-    position: absolute;
+    position: fixed;
     z-index: 5;
     width: 100vw;
     height: 100vh;
@@ -16,12 +16,19 @@
         border-radius: 12px;
         color: white;
         font-size: 30px;
+        @media screen and (max-width: 550px) {
+            font-size: 16px;
+        }
         &__product {
             display: flex;
             flex-flow: row nowrap;
             justify-content: space-between;
             align-items: center;
             margin: 20px;
+            @media screen and (max-width: 550px) {
+                margin-right: 5px;
+                margin-left: 5px;
+            }
             &--total {
                 border-top: 1px solid black;
                 padding-top: 10px;
@@ -31,9 +38,16 @@
                 font-weight: 700;
                 margin-right: 50px;
                 min-width: 170px;
+                @media screen and (max-width: 550px) {
+                    font-size: 16px;
+                    min-width: 110px;
+                    margin-right: 30px;
+                }
                 &--amount {
                     min-width: 60px;
-
+                    @media screen and (max-width: 550px) {
+                        min-width: 25px;
+                    }
                 }
             }
         }

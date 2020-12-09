@@ -1,21 +1,22 @@
 import React from 'react';
+//Dependencies
+import PropTypes from 'prop-types';
 //Style
 import './caloriesItem.scss';
 
-const CaloriesItem = ({ caloriesList }) => {
-
+const CaloriesItem = ({ caloriesList, category }) => {
+    //Create array with calories Data of API 
     const categoriesCalories = Object.keys(caloriesList);
     const dataCalories = categoriesCalories.reduce((acc, categoryCalories) => {
         const indexCategory = categoriesCalories.indexOf(categoryCalories);
-        let newAcc = acc;
-        newAcc = [...acc, { value: caloriesList[categoryCalories], name: categoriesCalories[indexCategory] }];
-        return newAcc;
-    })
-    console.log(dataCalories, 'jjjjj');
-
+        const category = { value: caloriesList[categoryCalories], name: categoriesCalories[indexCategory] };
+        acc.push(category);
+        return acc;
+    },[]);
+    
     return (
         <div className="calories-item">
-            <h2 className="calories-item__title">Hamburguer</h2>
+            <h2 className="calories-item__title">{category}</h2>
             {dataCalories.map((caloriesItem, index) => (
                 <div className="calories-item-card" key={index}>
                     <div className="calories-item-card-items">
@@ -26,6 +27,11 @@ const CaloriesItem = ({ caloriesList }) => {
             ))}
         </div>
     )
+}
+
+CaloriesItem.propTypes = {
+    caloriesList: PropTypes.object,
+    category: PropTypes.string
 }
 
 export default CaloriesItem;

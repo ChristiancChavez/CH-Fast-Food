@@ -8,7 +8,7 @@ import './Menu.scss';
 
 const Menu = () => {
     const ShowCategoriesMenu = categoriesMenu.map(categoryMenu => {
-        return <ImageCategoryMenu img={categoryMenu.img} category={categoryMenu.category} page={categoryMenu.page} />
+        return <ImageCategoryMenu img={categoryMenu.img} category={categoryMenu.category} page={categoryMenu.page} key={categoryMenu.id} />
     })
     return (
         <div className="menu">

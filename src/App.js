@@ -1,19 +1,15 @@
 import React from 'react';
-import Header from './Components/Header/Header';
-import Main from './Main';
-import { Provider } from 'react-redux';
-import store from './Redux/store';
-import './App.css';
+//Components
+import Header from './components/Header';
+import Main from './components/Main';
+import SocialMedia from './components/SocialMedia';
 
-function App() {
-  return (
-    <Provider store={store}>
-      <div className="App">
-        <Header />
-        <Main />
-      </div>
-    </Provider>
-  );
-}
+const App = () => (
+  <>
+    <Header />
+    <Main />
+    <SocialMedia />
+  </>
+);
 
 export default App;

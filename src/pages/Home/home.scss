@@ -1,0 +1,22 @@
+%position-category {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.home {
+    @extend %position-category;
+    flex-flow: column nowrap;
+    @media screen and (max-width: 800px) {
+        height: 100%;
+    }
+
+    &__categories {
+        @extend %position-category;
+        flex-flow: row nowrap;
+        
+        @media screen  and (max-width: 800px){
+            flex-flow: row wrap;
+        }
+    }
+
+}

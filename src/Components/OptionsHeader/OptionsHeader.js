@@ -4,10 +4,11 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from "react-router-dom";
 //Styles
-import './OptionsHeader.scss';
+import './optionsHeader.scss';
+
 const OptionsHeader = ({ name,  route }) => (
-    <Link className="optionsHeader" to={`/${route}`}>
-        <FontAwesomeIcon  icon={name} />
+    <Link className="optionsHeader" to={route}>
+        <FontAwesomeIcon icon={name} />
     </Link>
 )
 

@@ -1,0 +1,11 @@
+.main {
+    background-image: linear-gradient(to top, rgb(82, 80, 80) , rgb(133, 133, 129));
+    margin: 15px;
+    padding: 8px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    min-height: 72vh;
+}

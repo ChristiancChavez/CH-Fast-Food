@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 //Components
 import OptionsHeader from '../OptionsHeader';
 //Dependencies
-import { library } from '@fortawesome/fontawesome-svg-core'
+import { library } from '@fortawesome/fontawesome-svg-core';
 import { faUsers, faBriefcase, faStroopwafel, faListAlt, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 //Styles
 import './Header.scss';
@@ -10,7 +10,7 @@ import './Header.scss';
 import { AuthContext } from './../../context/AuthContext';
 
 const Header = () => {
-    
+
     library.add(faUsers, faBriefcase, faStroopwafel, faListAlt);
     const { login } = useContext(AuthContext);
     //const showIconProfile = login ? false : true

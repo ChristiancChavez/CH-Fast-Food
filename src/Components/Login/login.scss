@@ -1,0 +1,60 @@
+.login {
+    background: rgba(0, 0, 0, 0.842);
+    position: fixed;
+    z-index: 5;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    &-close {
+        background: transparent;
+        font-size: 30px;
+        color:#ffe600;
+        text-shadow: 5px 2px 2px #f34500;
+        border: none;
+        cursor: pointer;
+        margin-bottom: 20px;
+    }
+    &-content {
+        background-image: linear-gradient(to right, rgb(82, 80, 80) , rgb(133, 133, 129));
+        padding: 30px;
+        border-radius: 12px;
+        color: white;
+        font-size: 30px;
+        min-height: 200px;
+        @media screen and (max-width: 550px) {
+            font-size: 16px;
+        }
+        &__form {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: space-around;
+            height: 100%;
+            & input {
+                border-radius: 8px;
+                padding: 10px;
+                background: black;
+                color: white;
+                border: none;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            & :nth-child(5) {
+                padding: 10px 40px;
+                background:#f34500;
+                color: #ffe600;
+                cursor: pointer;
+                font-weight: 800;
+                &:hover {
+                    background:#ffe600;
+                    color: #f34500;
+                }
+            }
+        }
+    }
+}

@@ -1,7 +1,7 @@
 import React from "react";
 //Components
-import CategoryMenu from '../../components/CategoryMenu';
-import HeaderPage from '../../components/HeaderPages';
+import CategoryMenu from '../../Components/CategoryMenu';
+import HeaderPage from '../../Components/HeaderPages';
 //Data
 import categoriesMenu from '../../utils/categoriesMenu';
 //Styles

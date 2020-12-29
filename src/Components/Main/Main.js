@@ -9,7 +9,7 @@ import Calories from '../../pages/Calories'
 //Components
 import OptionsMenu from "../OptionsMenu";
 //Styles
-import './main.scss';
+import './Main.scss';
 
 const Main = () => (
   <main className="main">

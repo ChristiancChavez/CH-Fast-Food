@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 //Components
-import HeaderPage from '../../components/HeaderPages';
-import CaloriesItem from '../../components/CaloriesItem'
+import HeaderPage from '../../Components/HeaderPages';
+import CaloriesItem from '../../Components/CaloriesItem';
 //Dependencies 
-import axios from "axios";
+import axios from 'axios';
 //Styles
 import './calories.scss';
-
 const Calories = () => {
     const categoriesCalories = ['hamburguer', 'pizza', 'chicken'];
     const requestData = {
@@ -31,7 +30,7 @@ const Calories = () => {
             return request.items[0];
         }
         fetchData();
-    },[]);
+    },[requestData]);
     
     const renderCategories = categoriesCalories.map((categoryCalories, index) => (<CaloriesItem key={index} category={categoryCalories} caloriesList={caloriesList} />))
     return (

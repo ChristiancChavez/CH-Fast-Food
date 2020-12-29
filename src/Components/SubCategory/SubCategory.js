@@ -6,7 +6,7 @@ import OptionsSubcategory from '../OptionsSubCategory';
 //data
 import subCategoriesData from '../../utils/subcategories';
 //styles
-import './subCategory.scss';
+import './SubCategory.scss';
 
 const SubCategory = ({ optionCategory, products, handleUpdateProduct }) => (
     <div className="subcategory">

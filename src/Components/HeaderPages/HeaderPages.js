@@ -2,7 +2,7 @@ import React from 'react';
 //Dependencies
 import PropTypes from 'prop-types';
 //styles
-import './headerPages.scss';
+import './HeaderPages.scss';
 
 const HeaderPages = ({ title, paragraph}) => {
     return (

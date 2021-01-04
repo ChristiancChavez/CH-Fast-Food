@@ -4,15 +4,12 @@ export const ProfileContext = createContext();
 
 const ProfileContextProvider = (props) => {
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [name, setName] = useState('');
-    const [phone, setPhone] = useState('');
+    const [profile, setProfile] = useState({user:'', email:'', phone:'', password:'' })
 
     return (
-        <profileContext.Provider value={{email, setEmail, password, setPassword, name, setName, phone, setPhone}}>
+        <ProfileContext.Provider value={{profile, setProfile}}>
             {props.children}
-        </profileContext.Provider>
+        </ProfileContext.Provider>
     )
 }
 

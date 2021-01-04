@@ -9,16 +9,15 @@ import ProfileContextProvider from './context/ProfileContext';
 const App = () => {
 
 const [Showlogin, setShowLogin] = useState(true);
-const 
 
   return (
     <>
       <Header />
       <ProfileContextProvider>
         <Main />
+        <SocialMedia />
+        {Showlogin && <Login setShowLogin={setShowLogin} /> }
       </ProfileContextProvider>
-      <SocialMedia />
-      {Showlogin && <Login setShowLogin={setShowLogin} /> }
     </>
   )
 };

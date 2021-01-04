@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 //Dependencies
 import PropTypes from 'prop-types';
 //Styles
-import './optionsSubcategory.scss';
+import './OptionsSubcategory.scss';
 
 class OptionsSubcategory extends Component {
     state = {
@@ -31,7 +31,7 @@ class OptionsSubcategory extends Component {
         const { totalProduct } = this.state;
         return (
             <div className="options-subcategory">
-                <img className="options-subcategory__image" src={require(`../../assets/images/${option.img}.png`)} alt={option.flavor} />
+                <img className="options-subcategory__image" src={require(`../../Assets/Images/${option.img}.png`)} alt={option.flavor} />
                 <h4 className="options-subcategory__title">{option.flavor}</h4>
                 <div className="options-subcategory__counter">
                     <button className="options-subcategory__counter__button options-subcategory__counter__button--left" onClick={() => this.handleReduceProductCounter(category, option.flavor)}>-</button>

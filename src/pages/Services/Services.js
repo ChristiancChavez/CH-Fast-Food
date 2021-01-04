@@ -1,6 +1,6 @@
 import React from "react";
 //components
-import HeaderPage from '../../components/HeaderPages';
+import HeaderPage from '../../Components/HeaderPages';
 
 const Contact = () => (
   <HeaderPage title="Welcome to Services!" paragraph="Wedding Services Catering

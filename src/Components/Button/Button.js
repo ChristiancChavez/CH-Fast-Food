@@ -2,7 +2,7 @@ import React from 'react';
 //Dependencies
 import PropTypes from 'prop-types';
 //Styles
-import './button.scss';
+import './Button.scss';
 
 const Button = ({ text, handleMethod }) => {
     return (

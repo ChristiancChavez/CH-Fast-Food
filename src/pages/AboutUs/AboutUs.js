@@ -1,6 +1,6 @@
 import React from "react";
 //Components
-import HeaderPage from '../../components/HeaderPages';
+import HeaderPage from '../../Components/HeaderPages';
 
 const AboutUs = () => (
   <HeaderPage title="Welcome to AboutUs!" paragraph="CH's Food is the leading chain of quick service food restaurants around the world, with more than 30,000 

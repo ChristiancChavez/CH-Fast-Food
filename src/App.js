@@ -1,15 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 //Components
-import Header from './components/Header';
-import Main from './components/Main';
-import SocialMedia from './components/SocialMedia';
+import SocialMedia from './Components/SocialMedia';
+import Header from './Components/Header';
+import Main from './Components/Main';
+import Login from './Components/Login';
+import ProfileContextProvider from './context/ProfileContext';
 
-const App = () => (
-  <>
-    <Header />
-    <Main />
-    <SocialMedia />
-  </>
-);
+const App = () => {
+
+const [Showlogin, setShowLogin] = useState(true);
+
+  return (
+    <>
+      <Header />
+      <ProfileContextProvider>
+        <Main />
+        <SocialMedia />
+        {Showlogin && <Login setShowLogin={setShowLogin} /> }
+      </ProfileContextProvider>
+    </>
+  )
+};
 
 export default App;

@@ -2,7 +2,7 @@ import React from 'react';
 //Data
 import socialMediaAccounts from '../../utils/socialMediaAccounts';
 //Styles
-import './socialMedia.scss';
+import './SocialMedia.scss';
 
 const SocialMedia = () => (
     <div className="social">
@@ -14,7 +14,7 @@ const SocialMedia = () => (
                     key={socialMediaAccount}>
                     <img
                         className="social__icon__image"
-                        src={require(`../../assets/images/${socialMediaAccount}.png`)}
+                        src={require(`../../Assets/Images/${socialMediaAccount}.png`)}
                         alt={socialMediaAccount}
                     />
                 </a>
